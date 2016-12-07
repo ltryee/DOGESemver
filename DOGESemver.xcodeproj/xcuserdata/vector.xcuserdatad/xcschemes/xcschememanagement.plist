@@ -9,10 +9,20 @@
 			<key>orderHint</key>
 			<integer>0</integer>
 		</dict>
+		<key>DOGESemverUnitTests.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
 		<key>D6C016371DF7F28E000BB6CE</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>D6C0164A1DF7F3AD000BB6CE</key>
 		<dict>
 			<key>primary</key>
 			<true/>

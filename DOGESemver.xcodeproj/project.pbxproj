@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		D6C0163C1DF7F28E000BB6CE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D6C0163B1DF7F28E000BB6CE /* main.m */; };
+		D6C016451DF7F2FB000BB6CE /* semver.c in Sources */ = {isa = PBXBuildFile; fileRef = D6C016431DF7F2FB000BB6CE /* semver.c */; };
+		D6C0164E1DF7F3AD000BB6CE /* DOGESemverUnitTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D6C0164D1DF7F3AD000BB6CE /* DOGESemverUnitTests.m */; };
+		D6C016551DF7F404000BB6CE /* DOGESemver.m in Sources */ = {isa = PBXBuildFile; fileRef = D6C016541DF7F404000BB6CE /* DOGESemver.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,10 +28,24 @@
 /* Begin PBXFileReference section */
 		D6C016381DF7F28E000BB6CE /* DOGESemver */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = DOGESemver; sourceTree = BUILT_PRODUCTS_DIR; };
 		D6C0163B1DF7F28E000BB6CE /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		D6C016431DF7F2FB000BB6CE /* semver.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = semver.c; sourceTree = "<group>"; };
+		D6C016441DF7F2FB000BB6CE /* semver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = semver.h; sourceTree = "<group>"; };
+		D6C0164B1DF7F3AD000BB6CE /* DOGESemverUnitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DOGESemverUnitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D6C0164D1DF7F3AD000BB6CE /* DOGESemverUnitTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DOGESemverUnitTests.m; sourceTree = "<group>"; };
+		D6C0164F1DF7F3AD000BB6CE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D6C016531DF7F404000BB6CE /* DOGESemver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DOGESemver.h; sourceTree = "<group>"; };
+		D6C016541DF7F404000BB6CE /* DOGESemver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DOGESemver.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		D6C016351DF7F28E000BB6CE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D6C016481DF7F3AD000BB6CE /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -41,7 +58,9 @@
 		D6C0162F1DF7F28D000BB6CE = {
 			isa = PBXGroup;
 			children = (
+				D6C016421DF7F2C4000BB6CE /* semver.c */,
 				D6C0163A1DF7F28E000BB6CE /* DOGESemver */,
+				D6C0164C1DF7F3AD000BB6CE /* DOGESemverUnitTests */,
 				D6C016391DF7F28E000BB6CE /* Products */,
 			);
 			sourceTree = "<group>";
@@ -50,6 +69,7 @@
 			isa = PBXGroup;
 			children = (
 				D6C016381DF7F28E000BB6CE /* DOGESemver */,
+				D6C0164B1DF7F3AD000BB6CE /* DOGESemverUnitTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -58,8 +78,28 @@
 			isa = PBXGroup;
 			children = (
 				D6C0163B1DF7F28E000BB6CE /* main.m */,
+				D6C016531DF7F404000BB6CE /* DOGESemver.h */,
+				D6C016541DF7F404000BB6CE /* DOGESemver.m */,
 			);
 			path = DOGESemver;
+			sourceTree = "<group>";
+		};
+		D6C016421DF7F2C4000BB6CE /* semver.c */ = {
+			isa = PBXGroup;
+			children = (
+				D6C016431DF7F2FB000BB6CE /* semver.c */,
+				D6C016441DF7F2FB000BB6CE /* semver.h */,
+			);
+			path = semver.c;
+			sourceTree = "<group>";
+		};
+		D6C0164C1DF7F3AD000BB6CE /* DOGESemverUnitTests */ = {
+			isa = PBXGroup;
+			children = (
+				D6C0164D1DF7F3AD000BB6CE /* DOGESemverUnitTests.m */,
+				D6C0164F1DF7F3AD000BB6CE /* Info.plist */,
+			);
+			path = DOGESemverUnitTests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -82,6 +122,23 @@
 			productReference = D6C016381DF7F28E000BB6CE /* DOGESemver */;
 			productType = "com.apple.product-type.tool";
 		};
+		D6C0164A1DF7F3AD000BB6CE /* DOGESemverUnitTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D6C016501DF7F3AD000BB6CE /* Build configuration list for PBXNativeTarget "DOGESemverUnitTests" */;
+			buildPhases = (
+				D6C016471DF7F3AD000BB6CE /* Sources */,
+				D6C016481DF7F3AD000BB6CE /* Frameworks */,
+				D6C016491DF7F3AD000BB6CE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = DOGESemverUnitTests;
+			productName = DOGESemverUnitTests;
+			productReference = D6C0164B1DF7F3AD000BB6CE /* DOGESemverUnitTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -92,6 +149,10 @@
 				ORGANIZATIONNAME = "DOGE Studio";
 				TargetAttributes = {
 					D6C016371DF7F28E000BB6CE = {
+						CreatedOnToolsVersion = 8.1;
+						ProvisioningStyle = Automatic;
+					};
+					D6C0164A1DF7F3AD000BB6CE = {
 						CreatedOnToolsVersion = 8.1;
 						ProvisioningStyle = Automatic;
 					};
@@ -110,9 +171,20 @@
 			projectRoot = "";
 			targets = (
 				D6C016371DF7F28E000BB6CE /* DOGESemver */,
+				D6C0164A1DF7F3AD000BB6CE /* DOGESemverUnitTests */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		D6C016491DF7F3AD000BB6CE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		D6C016341DF7F28E000BB6CE /* Sources */ = {
@@ -120,6 +192,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				D6C0163C1DF7F28E000BB6CE /* main.m in Sources */,
+				D6C016451DF7F2FB000BB6CE /* semver.c in Sources */,
+				D6C016551DF7F404000BB6CE /* DOGESemver.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D6C016471DF7F3AD000BB6CE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D6C0164E1DF7F3AD000BB6CE /* DOGESemverUnitTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -227,6 +309,28 @@
 			};
 			name = Release;
 		};
+		D6C016511DF7F3AD000BB6CE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = DOGESemverUnitTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.DOGE.DOGESemverUnitTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		D6C016521DF7F3AD000BB6CE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = DOGESemverUnitTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.DOGE.DOGESemverUnitTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -244,6 +348,14 @@
 			buildConfigurations = (
 				D6C016401DF7F28E000BB6CE /* Debug */,
 				D6C016411DF7F28E000BB6CE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		D6C016501DF7F3AD000BB6CE /* Build configuration list for PBXNativeTarget "DOGESemverUnitTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D6C016511DF7F3AD000BB6CE /* Debug */,
+				D6C016521DF7F3AD000BB6CE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 		};
