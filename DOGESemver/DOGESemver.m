@@ -7,6 +7,7 @@
 //
 
 #import "DOGESemver.h"
+#import "DOGESemverOperatorHelper.h"
 
 @implementation DOGESemver
 @synthesize prerelease = _prerelease;
@@ -62,7 +63,6 @@
     return (NSComparisonResult)semver_compare(aSemver->_prototype, _prototype);
 }
 
-#pragma mark - others
 - (BOOL)satisfiesSemver:(DOGESemver *)aSemver withOperator:(NSString *)anOperator
 {
     return (BOOL)semver_satisfies(_prototype,
@@ -70,5 +70,20 @@
                                   [anOperator cStringUsingEncoding:NSUTF8StringEncoding]);
 }
 
+- (BOOL)satisfiesString:(NSString *)aString
+{
+    NSDictionary *dict = [DOGESemverOperatorHelper separateOperatorAndSemverFromString:aString];
+    NSString *op = dict[@"operator"];
+    DOGESemver *semver = dict[@"semver"];
+    
+    if (op.length == 0) {
+        return ([self compare:semver] == NSOrderedSame);
+    }
+    else {
+        return [self satisfiesSemver:semver withOperator:op];
+    }
+}
+
+#pragma mark - others
 
 @end

@@ -11,6 +11,7 @@
 		D6C016451DF7F2FB000BB6CE /* semver.c in Sources */ = {isa = PBXBuildFile; fileRef = D6C016431DF7F2FB000BB6CE /* semver.c */; };
 		D6C0164E1DF7F3AD000BB6CE /* DOGESemverUnitTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D6C0164D1DF7F3AD000BB6CE /* DOGESemverUnitTests.m */; };
 		D6C016551DF7F404000BB6CE /* DOGESemver.m in Sources */ = {isa = PBXBuildFile; fileRef = D6C016541DF7F404000BB6CE /* DOGESemver.m */; };
+		D6C016581DF8326B000BB6CE /* DOGESemverOperatorHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = D6C016571DF8326B000BB6CE /* DOGESemverOperatorHelper.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -35,6 +36,8 @@
 		D6C0164F1DF7F3AD000BB6CE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D6C016531DF7F404000BB6CE /* DOGESemver.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DOGESemver.h; sourceTree = "<group>"; };
 		D6C016541DF7F404000BB6CE /* DOGESemver.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DOGESemver.m; sourceTree = "<group>"; };
+		D6C016561DF8326B000BB6CE /* DOGESemverOperatorHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DOGESemverOperatorHelper.h; sourceTree = "<group>"; };
+		D6C016571DF8326B000BB6CE /* DOGESemverOperatorHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DOGESemverOperatorHelper.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +83,8 @@
 				D6C0163B1DF7F28E000BB6CE /* main.m */,
 				D6C016531DF7F404000BB6CE /* DOGESemver.h */,
 				D6C016541DF7F404000BB6CE /* DOGESemver.m */,
+				D6C016561DF8326B000BB6CE /* DOGESemverOperatorHelper.h */,
+				D6C016571DF8326B000BB6CE /* DOGESemverOperatorHelper.m */,
 			);
 			path = DOGESemver;
 			sourceTree = "<group>";
@@ -193,6 +198,7 @@
 			files = (
 				D6C0163C1DF7F28E000BB6CE /* main.m in Sources */,
 				D6C016451DF7F2FB000BB6CE /* semver.c in Sources */,
+				D6C016581DF8326B000BB6CE /* DOGESemverOperatorHelper.m in Sources */,
 				D6C016551DF7F404000BB6CE /* DOGESemver.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

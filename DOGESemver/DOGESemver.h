@@ -23,5 +23,8 @@
 
 - (instancetype)initWithString:(NSString *)aString;
 - (NSComparisonResult)compare:(DOGESemver *)aSemver;
+- (BOOL)satisfiesSemver:(DOGESemver *)aSemver withOperator:(NSString *)anOperator;
+
+- (BOOL)satisfiesString:(NSString *)aString;
 
 @end
