@@ -21,7 +21,7 @@
 {
     self = [super init];
     if (self) {
-        semver_t semver;
+        semver_t semver = {0, 0, 0, NULL, NULL};
         if (semver_parse([aString cStringUsingEncoding:NSUTF8StringEncoding], &semver) == 0) {
             _prototype = semver;
         }

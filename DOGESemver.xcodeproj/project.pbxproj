@@ -12,6 +12,9 @@
 		D6C0164E1DF7F3AD000BB6CE /* DOGESemverUnitTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D6C0164D1DF7F3AD000BB6CE /* DOGESemverUnitTests.m */; };
 		D6C016551DF7F404000BB6CE /* DOGESemver.m in Sources */ = {isa = PBXBuildFile; fileRef = D6C016541DF7F404000BB6CE /* DOGESemver.m */; };
 		D6C016581DF8326B000BB6CE /* DOGESemverOperatorHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = D6C016571DF8326B000BB6CE /* DOGESemverOperatorHelper.m */; };
+		D6C016591DF85378000BB6CE /* DOGESemverOperatorHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = D6C016571DF8326B000BB6CE /* DOGESemverOperatorHelper.m */; };
+		D6C0165A1DF8537C000BB6CE /* DOGESemver.m in Sources */ = {isa = PBXBuildFile; fileRef = D6C016541DF7F404000BB6CE /* DOGESemver.m */; };
+		D6C0165B1DF853B2000BB6CE /* semver.c in Sources */ = {isa = PBXBuildFile; fileRef = D6C016431DF7F2FB000BB6CE /* semver.c */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -207,7 +210,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D6C016591DF85378000BB6CE /* DOGESemverOperatorHelper.m in Sources */,
 				D6C0164E1DF7F3AD000BB6CE /* DOGESemverUnitTests.m in Sources */,
+				D6C0165A1DF8537C000BB6CE /* DOGESemver.m in Sources */,
+				D6C0165B1DF853B2000BB6CE /* semver.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
