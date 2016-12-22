@@ -51,7 +51,7 @@
 
 - (NSString *)prerelease
 {
-    if (!_prerelease) {
+    if (!_prerelease && _prototype.prerelease) {
         _prerelease = [NSString stringWithCString:_prototype.prerelease encoding:NSUTF8StringEncoding];
     }
     return _prerelease;

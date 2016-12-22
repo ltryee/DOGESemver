@@ -67,15 +67,15 @@
                    @"invalid patch %@, expect %@", @(semver.patch), dict[@"patch"]);
 }
 
-//- (void)testHelper
-//{
-//    [self testHelperWithString:@"=5.7.1"
-//                        expect:@{@"operator": @"=",
-//                                 @"major": @(5),
-//                                 @"minor": @(7),
-//                                 @"patch": @(1),
-//                                 }];
-//}
+- (void)testHelper
+{
+    [self testHelperWithString:@"=5.7.1"
+                        expect:@{@"operator": @"=",
+                                 @"major": @(5),
+                                 @"minor": @(7),
+                                 @"patch": @(1),
+                                 }];
+}
 
 - (void)testHelperWithString:(NSString *)aString expect:(NSDictionary *)result
 {
@@ -83,15 +83,18 @@
     
     // when
     NSDictionary *dict = [DOGESemverOperatorHelper separateOperatorAndSemverFromString:aString];
+    DOGESemver *testee = (DOGESemver *)dict[@"semver"];
     
     // then
-    XCTAssertEqual(dict[@"operator"],
-                   result[@"operator"],
-                   @"invalid operator %@, expect %@", dict[@"operator"], result[@"operator"]);
+    XCTAssert([(NSString *)dict[@"operator"] isEqualToString:result[@"operator"]], @"invalid operator %@, expect %@", dict[@"operator"], result[@"operator"]);
     
-    DOGESemver *testee = (DOGESemver *)dict[@"semver"];
-    DOGESemver *given = (DOGESemver *)result[@"semver"];
-    XCTAssert([testee compare:given] == NSOrderedSame, @"unexpected semver");
+    XCTAssert([@(testee.major) compare:result[@"major"]] == NSOrderedSame
+              && [@(testee.minor) compare:result[@"minor"]] == NSOrderedSame
+              && [@(testee.patch) compare:result[@"patch"]] == NSOrderedSame, @"unexpected semver");
+    XCTAssert(testee.prerelease == result[@"prerelease"], @"uncexpected prerelease");
+    if (testee.prerelease && result[@"prerelease"]) {
+        XCTAssert([testee.prerelease isEqualToString:result[@"prerelease"]], @"uncexpected prerelease");
+    }
 }
 
 //- (void)testSatisfies

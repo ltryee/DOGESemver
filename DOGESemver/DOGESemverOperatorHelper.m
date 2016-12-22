@@ -26,7 +26,7 @@
         semver = [DOGESemver semverWithString:aString];
     }
     else {
-        op = [aString substringToIndex:range.location - 1];
+        op = [aString substringToIndex:range.location];
         semver = [DOGESemver semverWithString:[aString substringFromIndex:range.location]];
     }
     
