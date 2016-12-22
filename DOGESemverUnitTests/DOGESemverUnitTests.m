@@ -86,6 +86,41 @@
                                  @"minor": @(7),
                                  @"patch": @(1),
                                  }];
+    
+    [self testHelperWithString:@">=5.7.1"
+                        expect:@{@"operator": @">=",
+                                 @"major": @(5),
+                                 @"minor": @(7),
+                                 @"patch": @(1),
+                                 }];
+    
+    [self testHelperWithString:@"<=5.7.1"
+                        expect:@{@"operator": @"<=",
+                                 @"major": @(5),
+                                 @"minor": @(7),
+                                 @"patch": @(1),
+                                 }];
+    
+    [self testHelperWithString:@"<5.7.1"
+                        expect:@{@"operator": @"<",
+                                 @"major": @(5),
+                                 @"minor": @(7),
+                                 @"patch": @(1),
+                                 }];
+    
+    [self testHelperWithString:@"~5.7.1"
+                        expect:@{@"operator": @"~",
+                                 @"major": @(5),
+                                 @"minor": @(7),
+                                 @"patch": @(1),
+                                 }];
+    
+    [self testHelperWithString:@"^5.7.1"
+                        expect:@{@"operator": @"^",
+                                 @"major": @(5),
+                                 @"minor": @(7),
+                                 @"patch": @(1),
+                                 }];
 }
 
 - (void)testHelperWithString:(NSString *)aString expect:(NSDictionary *)result
