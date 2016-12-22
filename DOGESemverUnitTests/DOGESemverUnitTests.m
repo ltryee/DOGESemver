@@ -56,6 +56,11 @@
     
     // then
     NSLog(@"testing create semver %@", aString);
+    [self testCreateSemver:semver expect:dict];
+}
+
+- (void)testCreateSemver:(DOGESemver *)semver expect:(NSDictionary *)dict
+{
     XCTAssertEqual(semver.major,
                    ((NSNumber *)dict[@"major"]).integerValue,
                    @"invalid major %@, expect %@", @(semver.major), dict[@"major"]);
@@ -65,6 +70,11 @@
     XCTAssertEqual(semver.patch,
                    ((NSNumber *)dict[@"patch"]).integerValue,
                    @"invalid patch %@, expect %@", @(semver.patch), dict[@"patch"]);
+    
+    XCTAssert(semver.prerelease == dict[@"prerelease"], @"uncexpected prerelease");
+    if (semver.prerelease && dict[@"prerelease"]) {
+        XCTAssert([semver.prerelease isEqualToString:dict[@"prerelease"]], @"uncexpected prerelease");
+    }
 }
 
 - (void)testHelper
@@ -87,19 +97,12 @@
     
     // then
     XCTAssert([(NSString *)dict[@"operator"] isEqualToString:result[@"operator"]], @"invalid operator %@, expect %@", dict[@"operator"], result[@"operator"]);
-    
-    XCTAssert([@(testee.major) compare:result[@"major"]] == NSOrderedSame
-              && [@(testee.minor) compare:result[@"minor"]] == NSOrderedSame
-              && [@(testee.patch) compare:result[@"patch"]] == NSOrderedSame, @"unexpected semver");
-    XCTAssert(testee.prerelease == result[@"prerelease"], @"uncexpected prerelease");
-    if (testee.prerelease && result[@"prerelease"]) {
-        XCTAssert([testee.prerelease isEqualToString:result[@"prerelease"]], @"uncexpected prerelease");
-    }
+    [self testCreateSemver:testee expect:result];
 }
 
 //- (void)testSatisfies
 //{
-//
+//    
 //}
 //
 //- (void)testSatisfiesWithString:(NSString *)aString expectResult:(BOOL)result

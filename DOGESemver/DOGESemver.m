@@ -11,6 +11,7 @@
 
 @implementation DOGESemver
 @synthesize prerelease = _prerelease;
+@synthesize stringValue = _stringValue;
 
 + (instancetype)semverWithString:(NSString *)aString
 {
@@ -24,6 +25,7 @@
         semver_t semver = {0, 0, 0, NULL, NULL};
         if (semver_parse([aString cStringUsingEncoding:NSUTF8StringEncoding], &semver) == 0) {
             _prototype = semver;
+            _stringValue = [aString copy];
         }
     }
     return self;
@@ -55,6 +57,11 @@
         _prerelease = [NSString stringWithCString:_prototype.prerelease encoding:NSUTF8StringEncoding];
     }
     return _prerelease;
+}
+
+- (NSString *)stringValue
+{
+    return _stringValue;
 }
 
 #pragma mark - public methods

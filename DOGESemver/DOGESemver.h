@@ -18,6 +18,7 @@
 @property (nonatomic, readonly) NSInteger minor;
 @property (nonatomic, readonly) NSInteger patch;
 @property (nonatomic, readonly) NSString *prerelease;
+@property (nonatomic, readonly) NSString *stringValue;
 
 + (instancetype)semverWithString:(NSString *)aString;
 

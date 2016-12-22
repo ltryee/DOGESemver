@@ -10,6 +10,6 @@
 
 @interface DOGESemverOperatorHelper : NSObject
 
-+(NSDictionary *)separateOperatorAndSemverFromString:(NSString *)aString;
++ (NSDictionary *)separateOperatorAndSemverFromString:(NSString *)aString;
 
 @end
