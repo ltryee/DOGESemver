@@ -22,6 +22,7 @@
     [super setUp];
     
     _sub = [DOGESemver semverWithString:@"5.7.1"];
+    NSLog(@"semver version: %s", SEMVER_VERSION);
 }
 
 - (void)tearDown {
@@ -100,21 +101,24 @@
     [self testCreateSemver:testee expect:result];
 }
 
-//- (void)testSatisfies
-//{
-//    
-//}
-//
-//- (void)testSatisfiesWithString:(NSString *)aString expectResult:(BOOL)result
-//{
-//    // given
-//    DOGESemver *aSemver = [DOGESemver semverWithString:aString];
-//    
-//    // when
-//    
-//    
-//    // then
-//    
-//}
+- (void)testSatisfiability
+{
+    [self testSemver:_sub satisfiesString:@">=5.7" expectResult:YES];
+    [self testSemver:_sub satisfiesString:@">=5.7.1" expectResult:YES];
+    [self testSemver:_sub satisfiesString:@">5.7" expectResult:YES];
+    [self testSemver:_sub satisfiesString:@">5.7.1" expectResult:NO];
+}
+
+- (void)testSemver:(DOGESemver *)semver satisfiesString:(NSString *)aString expectResult:(BOOL)expectResult
+{
+    // given
+    
+    // when
+    BOOL result = [_sub satisfiesString:aString];
+    
+    // then
+    NSLog(@"testing satisfiability '%@' with semver '%@', result %@", aString, _sub.stringValue, @(result));
+    XCTAssertEqual(result, expectResult, @"unexpected satisfy result %@, expect %@", @(result), @(expectResult));
+}
 
 @end
